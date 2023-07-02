@@ -1,3 +1,4 @@
+// ./pages/api/streams/[id].ts
 import { NextApiRequest, NextApiResponse } from "next";
 import withHandler, { ResponseType } from "@libs/server/withHandler";
 import client from "@libs/server/client";
@@ -13,7 +14,7 @@ async function handler(
   } = req;
   const stream = await client.stream.findUnique({
     where: {
-      id: +id.toString(),
+      id: Number(id),
     },
     include: {
       messages: {
@@ -44,3 +45,5 @@ export default withApiSession(
     handler,
   })
 );
+
+// ./pages/api/streams/[id].ts

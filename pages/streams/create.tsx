@@ -1,3 +1,4 @@
+// ./pages/streams/create.tsx
 import type { NextPage } from "next";
 import Button from "@components/button";
 import Input from "@components/input";
@@ -64,3 +65,5 @@ const Create: NextPage = () => {
 };
 
 export default Create;
+
+// ./pages/streams/create.tsx

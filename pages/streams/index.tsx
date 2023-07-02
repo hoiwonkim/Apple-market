@@ -1,3 +1,4 @@
+// ./pages/streams/index.tsx
 import type { NextPage } from "next";
 import Link from "next/link";
 import FloatingButton from "@components/floating-button";
@@ -14,7 +15,7 @@ interface StreamsResponse {
 const Streams: NextPage = () => {
   const { data } = useSWR<StreamsResponse>(`/api/streams?page=3`);
   return (
-    <Layout hasTabBar title="라이브">
+    <Layout hasTabBar title="Live">
       <div className=" divide-y-[1px] space-y-4">
         {data?.streams.map((stream) => (
           <Link key={stream.id} href={`/streams/${stream.id}`}>
@@ -53,3 +54,6 @@ const Streams: NextPage = () => {
 };
 
 export default Streams;
+
+
+// ./pages/streams/index.tsx

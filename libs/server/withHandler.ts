@@ -1,3 +1,4 @@
+import { response } from "express";
 import { NextApiRequest, NextApiResponse } from "next";
 
 export interface ResponseType {
@@ -29,7 +30,10 @@ export default function withHandler({
       return res.status(401).json({ ok: false, error: "Plz log in." });
     }
     try {
-      await handler(req, res);
+     await handler(req, res)
+
+      
+     
     } catch (error) {
       console.log(error);
       return res.status(500).json({ error });

@@ -15,11 +15,14 @@ async function handler(
         headers: {
           "Content-Type": "application/json",
           Authorization: `Bearer ${process.env.CF_IMAGES_TOKEN}`,
+          
         },
       }
     )
-  ).json();
-  console.log(response);
+  ).json()
+
+  console.log("TEST THIS: ", response);
+
   res.json({
     ok: true,
     ...response.result,

@@ -13,7 +13,7 @@ async function handler(
   } = req;
   const product = await client.product.findUnique({
     where: {
-      id: +id.toString(),
+      id: Number(id),
     },
     include: {
       user: {
@@ -25,11 +25,15 @@ async function handler(
       },
     },
   });
-  const terms = product?.name.split(" ").map((word) => ({
+  const terms = product?.name?.substring(0,6).split(" ").map((word) => ({
     name: {
       contains: word,
     },
+
+   
   }));
+
+  console.log("testing this: ", terms)
   const relatedProducts = await client.product.findMany({
     where: {
       OR: terms,

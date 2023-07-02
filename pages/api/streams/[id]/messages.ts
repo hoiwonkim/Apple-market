@@ -1,3 +1,4 @@
+// ./pages/api/streams/[id]/messages.ts
 import { NextApiRequest, NextApiResponse } from "next";
 import withHandler, { ResponseType } from "@libs/server/withHandler";
 import client from "@libs/server/client";
@@ -17,7 +18,7 @@ async function handler(
       message: body.message,
       stream: {
         connect: {
-          id: +id.toString(),
+          id: Number(id),
         },
       },
       user: {
@@ -36,3 +37,6 @@ export default withApiSession(
     handler,
   })
 );
+
+// ./pages/api/streams/[id]/messages.ts
+

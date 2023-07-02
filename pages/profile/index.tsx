@@ -64,7 +64,7 @@ const MiniProfile = () => {
     <div className="flex items-center mt-4 space-x-3">
       {user?.avatar ? (
         <img
-          src={`https://imagedelivery.net/aSbksvJjax-AUC7qVnaC4A/${user?.avatar}/avatar`}
+          src={`https://imagedelivery.net/KLyJN9bhCAENSPViJvNVMQ/${user?.avatar}/avatar`}
           className="w-16 h-16 bg-slate-500 rounded-full"
         />
       ) : (
@@ -82,7 +82,7 @@ const MiniProfile = () => {
 
 const Profile: NextPage = () => {
   return (
-    <Layout hasTabBar title="나의 캐럿">
+    <Layout hasTabBar title="My apple">
       <div className="px-4">
         <Suspense fallback="Loading Mini Profile">
           <MiniProfile />
@@ -107,7 +107,7 @@ const Profile: NextPage = () => {
                 </svg>
               </div>
               <span className="text-sm mt-2 font-medium text-gray-700">
-                판매내역
+                Sales details
               </span>
             </a>
           </Link>
@@ -130,7 +130,7 @@ const Profile: NextPage = () => {
                 </svg>
               </div>
               <span className="text-sm mt-2 font-medium text-gray-700">
-                구매내역
+                purchase history
               </span>
             </a>
           </Link>
@@ -153,7 +153,7 @@ const Profile: NextPage = () => {
                 </svg>
               </div>
               <span className="text-sm mt-2 font-medium text-gray-700">
-                관심목록
+                Watch List
               </span>
             </a>
           </Link>

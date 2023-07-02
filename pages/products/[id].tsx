@@ -33,6 +33,11 @@ const ItemDetail: NextPage<ItemDetailResponse> = ({
     router.query.id ? `/api/products/${router.query.id}` : null
   );
   const [toggleFav] = useMutation(`/api/products/${router.query.id}/fav`);
+
+    const submitHandler = () => {
+     router.push('/community/write')
+    }
+
   const onFavClick = () => {
     if (!data) return;
     boundMutate((prev) => prev && { ...prev, isLiked: !prev.isLiked }, false);
@@ -52,7 +57,7 @@ const ItemDetail: NextPage<ItemDetailResponse> = ({
         <div className="mb-8">
           <div className="relative  pb-80">
             <Image
-              src={`https://imagedelivery.net/aSbksvJjax-AUC7qVnaC4A/${product.image}/public`}
+              src={`https://imagedelivery.net/KLyJN9bhCAENSPViJvNVMQ/${product.image}/public`}
               className="bg-slate-300 object-cover"
               layout="fill"
             />
@@ -61,7 +66,7 @@ const ItemDetail: NextPage<ItemDetailResponse> = ({
             <Image
               width={48}
               height={48}
-              src={`https://imagedelivery.net/aSbksvJjax-AUC7qVnaC4A/${product?.user?.avatar}/avatar`}
+              src={`https://imagedelivery.net/KLyJN9bhCAENSPViJvNVMQ/${product?.user?.avatar}/avatar`}
               className="w-12 h-12 rounded-full bg-slate-300"
             />
             <div>
@@ -84,7 +89,7 @@ const ItemDetail: NextPage<ItemDetailResponse> = ({
             </span>
             <p className=" my-6 text-gray-700">{product?.description}</p>
             <div className="flex items-center justify-between space-x-2">
-              <Button large text="Talk to seller" />
+               <Button type="button" onClick={submitHandler} large text="Talk to seller" ></Button> 
               <button
                 onClick={onFavClick}
                 className={cls(
@@ -93,7 +98,7 @@ const ItemDetail: NextPage<ItemDetailResponse> = ({
                     ? "text-red-500  hover:text-red-600"
                     : "text-gray-400  hover:text-gray-500"
                 )}
-              >
+              > 
                 {isLiked ? (
                   <svg
                     className="w-6 h-6"

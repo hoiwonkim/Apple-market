@@ -16,7 +16,7 @@ export default function Item({ title, price, hearts, id, image }: ItemProps) {
         <div className="flex space-x-4">
           <div className="w-20 h-20 relative  rounded-md">
             <Image
-              src={`https://imagedelivery.net/aSbksvJjax-AUC7qVnaC4A/${image}/public`}
+              src={`https://imagedelivery.net/KLyJN9bhCAENSPViJvNVMQ/${image}/public`}
               layout="fill"
               objectFit="cover"
             />
